@@ -1,2 +1,2 @@
-COMPONENT: cart
-APP_TYPE: backend
+COMPONENT: mongodb
+APP_TYPE: db

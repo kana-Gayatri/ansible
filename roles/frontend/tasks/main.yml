@@ -1,4 +1,30 @@
-- name: Import NodejS
-  ansible.builtin.include_role:
+- name: Install Nginx
+  yum:
+    name: nginx
+    state: latest
+
+- name: Download code
+  include_role:
     name: common
-    tasks_from: nodejs
+    tasks_from: download
+  vars:
+    APP_LOCATION: /usr/share/nginx/html/
+
+- name: Copy the Htdocs content
+  ansible.builtin.copy:
+    src: /tmp/frontend-main/static/
+    dest: /usr/share/nginx/html/
+    remote_src: yes
+  when: APP_VERSION is not defined
+
+- name: Copy RoboShop Config file
+  ansible.builtin.template:
+    src: roboshop.conf
+    dest: /etc/nginx/default.d/roboshop.conf
+
+- name: Start Nginx Service
+  ansible.builtin.systemd:
+    state: restarted
+    name: nginx
+    enabled: yes
+
