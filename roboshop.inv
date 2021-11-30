@@ -11,7 +11,7 @@ shipping-dev.roboshop.internal
 [mysql]
 mysql-dev.roboshop.internal
 [mongodb]
-mongodb-dev.roboshop.internal
+mongodb-roboshop.internal
 [redis]
 redis-dev.roboshop.internal
 [rabbitmq]
