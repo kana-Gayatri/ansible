@@ -1,2 +1,2 @@
-COMPONENT: cart
-APP_TYPE: backend
+COMPONENT: redis
+APP_TYPE: db
