@@ -38,7 +38,13 @@
   set_fact:
     FILENAME: "{{ out.stdout.split('/') | last }}"
 
+- name: Set Directoryname
+  set_fact:
+    DIRNAME: "{{ out.stdout.split('/') | last }}"
 
 - name: print
   debug:
     msg: "{{FILENAME}}"
+- name: print
+  debug:
+    msg: "{{DIRNAME}}"
