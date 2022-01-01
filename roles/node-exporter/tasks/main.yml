@@ -36,7 +36,7 @@
 
 - name: Set filename
   set_fact:
-    FILENAME: "{{ out.stdout.split('/').last }}"
+    FILENAME: "{{ out.stdout.split('/') | last }}"
 
 
 - name: print
