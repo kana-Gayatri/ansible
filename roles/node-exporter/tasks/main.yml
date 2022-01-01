@@ -36,8 +36,8 @@
 
 - name: Set filename and dir name
   set_fact:
-    FILENAME:"{{out.stdout.split("/") | last}}"
-#    "{{ out.stdout.split('/').last }}"
+    FILENAME:
+      FILENAME: "{{ out.stdout.split('/').last }}"
 #      $(echo $URL | awk -F / '{print $NF}')
     #- DIRNAME: $(echo $FILENAME | sed -e 's/.tar.gz//')
 
