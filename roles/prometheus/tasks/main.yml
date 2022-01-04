@@ -17,7 +17,6 @@
     src: alertmanager.yml
     dest: /opt/alertmanager/alertmanager.yml
 
-
 - name: Restart alertmanager
   systemd:
     name: alertmanager
