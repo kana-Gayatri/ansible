@@ -1,5 +1,5 @@
-#- name: Install Node Exporter.
-#  shell: curl -s https://raw.githubusercontent.com/linuxautomations/labautomation/master/tools/prometheus-node-exporter/install.sh | bash
+- name: Install Node Exporter.
+  shell: curl -s https://raw.githubusercontent.com/linuxautomations/labautomation/master/tools/prometheus-node-exporter/install.sh | bash
 
 
 
@@ -30,21 +30,21 @@
 #    DIRNAME: "{{ FILENAME | replace('.tar.gz','') }} "
 #
 #
-- name: Get latest version of node exporter
-  shell: curl -L -s https://prometheus.io/download/  | grep tar | grep node_exporter | grep linux-amd64  | sed -e "s|>| |g" -e 's|<| |g' -e 's|"| |g' |xargs -n1 | grep ^http
-  register: out
-
-- name: Set filename
-  set_fact:
-    FILENAME: "{{ out.stdout.split('/') | last }}"
-
-- name: Set Directoryname
-  set_fact:
-    DIRNAME: "{{ out.stdout.split('/') | last }}"
-
-- name: print
-  debug:
-    msg: "{{FILENAME}}"
-- name: print
-  debug:
-    msg: "{{DIRNAME}}"
+#- name: Get latest version of node exporter
+#  shell: curl -L -s https://prometheus.io/download/  | grep tar | grep node_exporter | grep linux-amd64  | sed -e "s|>| |g" -e 's|<| |g' -e 's|"| |g' |xargs -n1 | grep ^http
+#  register: out
+#
+#- name: Set filename
+#  set_fact:
+#    FILENAME: "{{ out.stdout.split('/') | last }}"
+#
+#- name: Set Directoryname
+#  set_fact:
+#    DIRNAME: "{{ out.stdout.split('/') | last }}"
+#
+#- name: print
+#  debug:
+#    msg: "{{FILENAME}}"
+#- name: print
+#  debug:
+#    msg: "{{DIRNAME}}"
