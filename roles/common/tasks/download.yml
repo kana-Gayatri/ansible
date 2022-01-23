@@ -4,14 +4,21 @@
   when: APP_TYPE == "backend"
   register: app_user_info
 
-
-- name: Include Dowload from GitHub
+- name: Include Download from GitHub
   include_tasks: download-from-github.yml
   when: APP_VERSION == ""
 
-- name: Include Dowload from Nexus
+- name: Include Download from Nexus
   include_tasks: download-from-nexus.yml
   when: APP_VERSION != ""
+
+#- name: Include Dowload from GitHub
+#  include_tasks: download-from-github.yml
+#  when: APP_VERSION == ""
+#
+#- name: Include Dowload from Nexus
+#  include_tasks: download-from-nexus.yml
+#  when: APP_VERSION != ""
 
 
 
