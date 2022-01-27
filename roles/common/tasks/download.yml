@@ -10,11 +10,11 @@
 
   when: APP_VERSION == ""
 
-- name: Include Download from Nexus
-  include_tasks: download-from-nexus.yml
-#  when: APP_VERSION is defined
-
-  when: APP_VERSION != ""
+#- name: Include Download from Nexus
+#  include_tasks: download-from-nexus.yml
+##  when: APP_VERSION is defined
+#
+#  when: APP_VERSION != ""
 
 
 
