@@ -6,19 +6,17 @@
 
 - name: Include Download from GitHub
   include_tasks: download-from-github.yml
-  when: APP_VERSION == ""
+  when: APP_VERSION is defined
+
+#  when: APP_VERSION == ""
 
 - name: Include Download from Nexus
   include_tasks: download-from-nexus.yml
-  when: APP_VERSION != ""
+  when: APP_VERSION is defined
 
-#- name: Include Dowload from GitHub
-#  include_tasks: download-from-github.yml
-#  when: APP_VERSION == ""
-#
-#- name: Include Dowload from Nexus
-#  include_tasks: download-from-nexus.yml
-#  when: APP_VERSION != ""
+  #  when: APP_VERSION != ""
+
+
 
 
 
