@@ -9,7 +9,7 @@
     path: "{{APP_LOCATION}}"
     state: directory
   when: APP_TYPE == "frontend" or APP_TYPE == "backend"
-//nexus ip
+
 - name: Download App Component
   get_url:
     url: http://172.31.8.128:8081/repository/{{COMPONENT}}/{{COMPONENT}}-{{APP_VERSION}}.zip
