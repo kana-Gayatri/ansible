@@ -17,8 +17,8 @@
 #    url_username: "{{NEXUS_USER}}"
 #    url_password: "{{NEXUS_PASS}}"
 
-#- name: Extract {{COMPONENT}} Code
-#  ansible.builtin.unarchive:
-#    src: /tmp/{{COMPONENT}}.zip
-#    dest: "{{APP_LOCATION}}"
-#    remote_src: yes
+- name: Extract {{COMPONENT}} Code
+  ansible.builtin.unarchive:
+    src: /tmp/{{COMPONENT}}.zip
+    dest: "{{APP_LOCATION}}"
+    remote_src: yes
